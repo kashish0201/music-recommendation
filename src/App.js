@@ -7,10 +7,13 @@ import Signup from './auth/Signup';
 import Classify from './Classify';
 
 import { Routes, Route, Navigate } from "react-router-dom";
+import { user } from './atoms'
+import { useRecoilValue } from 'recoil';
+
 
 function App() {
 
-  const loggedIn = true; // replace with api value
+  const loggedIn = useRecoilValue(user);
 
   return (
     <Routes>
