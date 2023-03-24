@@ -1,0 +1,8 @@
+.rightNav {
+    position: fixed;
+    width: 25%;
+    height: 1080px;
+    right: 0;
+    top: 0px;
+    background: #1F1F1F;
+}

@@ -1,0 +1,17 @@
+body {
+    /* background-color: aqua; */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+}
+.container_ {
+    position: absolute;
+    top: 42%;
+    left: 12%;
+    height: 300px;
+    width: 900px;
+    /* background-color: red; */
+}

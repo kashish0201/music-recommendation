@@ -1,0 +1,26 @@
+.leftNav {
+    position: fixed;
+    width: 8%;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    background: #1F1F1F;
+}
+
+.logo {
+    margin-top: 25%;
+    margin-left: 17%;
+    height: 90px;
+    transform: rotate(10deg);
+}
+
+.navIcon {
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+    height: 30px;
+}
+
+.navIcon:hover {
+    transform: scale(1.2);
+}

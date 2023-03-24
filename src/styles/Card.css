@@ -1,0 +1,19 @@
+.genreCard {
+    background-color: rgb(92, 92, 92);
+    border-radius: 12%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.genreCard>img {
+    height: 100px;
+    object-fit: contain;
+    border-radius: 12% 12% 0 0;
+}
+
+.genreCard>span {
+    padding: 2%;
+}
