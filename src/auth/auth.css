@@ -49,7 +49,7 @@ input{
 ::placeholder{
     color: #a1a1a1;
 }
-button{
+.submit{
     background-color: #d33333;
     color: #000000;
     border: 0;

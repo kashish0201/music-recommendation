@@ -61,7 +61,7 @@ const Login = () => {
                     <p className="error text-center">Incorrect credentials</p>
                 </div>}
                 <div className="wrapper">
-                    <button onClick={handleSubmit}>login</button>
+                    <button onClick={handleSubmit} className="submit">login</button>
                 </div>
                 <div className="wrapper">
                     <p className="signup-link">Don't have an account? <a href="/Signup">Signup</a></p>

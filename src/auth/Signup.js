@@ -102,7 +102,7 @@ const Signup = () => {
                     {pass2Error && <p className="error">Passwords do not match</p>}
                 </div>
                 <div className="wrapper">
-                    <button className="login-link" onClick={handleSubmit}>signup</button>
+                    <button className="login-link submit" onClick={handleSubmit}>signup</button>
                 </div>
             </form>
         </div>
