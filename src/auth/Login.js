@@ -14,7 +14,9 @@ const Login = () => {
 
     const [error, setError] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
         const formData = {
             username: username,
             password: password,
@@ -32,7 +34,7 @@ const Login = () => {
 
                 axiosInstance.defaults.headers["Authorization"] = "Token " + localStorage.getItem("token");
 
-                setUser(res.data.user);
+                setUser({user: res.data.user});
 
                 navigate("/");
             })
@@ -45,22 +47,27 @@ const Login = () => {
     }
     
     return (
-        <form>
-            <h3>login to your account</h3>
-            <div className="wrapper">
-                <input type="usename" placeholder="enter your username" id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <input type="password" placeholder="enter your password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <button onClick={handleSubmit}>login</button>
-            </div>
-            <div className="wrapper">
-                <p className="signup-link">Don't have an account? <a href="/Signup">Signup</a></p>
-            </div>
-
-        </form>
+        <div className="form-wrapper">
+        
+            <form className="suform">
+                <h3>login to your account</h3>
+                <div className="wrapper">
+                    <input type="usename" placeholder="enter your username" id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                </div>
+                <div className="wrapper">
+                    <input type="password" placeholder="enter your password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+                {error && <div className="wrapper " >
+                    <p className="error text-center">Incorrect credentials</p>
+                </div>}
+                <div className="wrapper">
+                    <button onClick={handleSubmit}>login</button>
+                </div>
+                <div className="wrapper">
+                    <p className="signup-link">Don't have an account? <a href="/Signup">Signup</a></p>
+                </div>
+            </form>
+        </div>
     );
 }
  

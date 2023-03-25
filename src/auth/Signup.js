@@ -20,11 +20,15 @@ const Signup = () => {
     const [pass2Error, setPass2Error] = useState(false);
     const [usernameError, setUsernameError] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
 
         setEmailError(false);
         setPassError(false);
         setUsernameError(false);
+        setPass2Error(false);
+
 
         const formData = {
             username: username,
@@ -51,6 +55,11 @@ const Signup = () => {
             submit = false;
         }
 
+        if (formData.password !== password2) {
+            setPass2Error(true);
+            submit = false;
+        }
+
         if (submit) {
             axiosInstance
                 .post(`auth/register`, formData)
@@ -62,7 +71,7 @@ const Signup = () => {
 
                     axiosInstance.defaults.headers["Authorization"] = "Token " + localStorage.getItem("token");
 
-                    setUser(res.data.user);
+                    setUser({user: res.data.user});
 
                     navigate("/");
                 })
@@ -73,25 +82,30 @@ const Signup = () => {
     };
 
     return (
-        <form className="suform">
-            <h3 className="suhead">create your account</h3>
-            <div className="wrapper">
-                <input type="text" placeholder="enter your username" id="username" value={username} onChange={e => setUsername(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <input type="email" placeholder="enter your email" id="email" value={email} onChange={e => setEmail(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <input type="password" placeholder="set your password" id="password1" value={password} onChange={e => setPassword(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <input type="password" placeholder="confirm your password" id="password2" value={password2} onChange={e => setPassword2(e.target.value)}/>
-            </div>
-            <div className="wrapper">
-                <button className="login-link" onClick={handleSubmit}>signup</button>
-            </div>
-
-        </form>
+        <div className="form-wrapper">
+            <form className="suform">
+                <h3 className="suhead">create your account</h3>
+                <div className="wrapper">
+                    <input type="text" placeholder="enter your username" id="username" value={username} onChange={e => setUsername(e.target.value)}/>
+                    {usernameError && <p className="error">Username cannot be purely numeric and must be atleast 3 and atmost 20 characters long</p>}
+                </div>
+                <div className="wrapper">
+                    <input type="email" placeholder="enter your email" id="email" value={email} onChange={e => setEmail(e.target.value)}/>
+                    {emailError && <p className="error">Email is invalid</p>}
+                </div>
+                <div className="wrapper">
+                    <input type="password" placeholder="set your password" id="password1" value={password} onChange={e => setPassword(e.target.value)}/>
+                    {passError && <p className="error">Password must contain at least 8 characters</p>}
+                </div>
+                <div className="wrapper">
+                    <input type="password" placeholder="confirm your password" id="password2" value={password2} onChange={e => setPassword2(e.target.value)}/>
+                    {pass2Error && <p className="error">Passwords do not match</p>}
+                </div>
+                <div className="wrapper">
+                    <button className="login-link" onClick={handleSubmit}>signup</button>
+                </div>
+            </form>
+        </div>
     );
 }
  

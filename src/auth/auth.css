@@ -1,4 +1,11 @@
-form{
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0; 
+}
+
+
+.form-wrapper{
     width: 30%;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -19,7 +26,7 @@ form h3{
 input{
     display: block;
     height: 50px;
-    width: 80%;
+    width: 100%;
     padding-left: 15px ;
     padding-right: 15px ;
     background-color: #525252;
@@ -28,10 +35,13 @@ input{
     border: none;
     font-size: 17px;
     font-weight: 300;
+    color: white;
 }
 
 .wrapper{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 35px;
     margin-bottom: 35px;
@@ -54,8 +64,13 @@ button{
     padding-bottom: 0px;
 }
 
-.suform{
+.form-wrapper{
     padding: 50px 20px 40px;
+}
+
+.suform{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .signup-link{
@@ -70,4 +85,18 @@ button{
 .login-link a{
     color: #000000;
     text-decoration: none;
+}
+
+.error {
+    margin: 10px 0 -10px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    color: #d33333;
+    width: 100%;
+    font-size: small;
+}
+
+.text-center {
+    text-align: center;
 }

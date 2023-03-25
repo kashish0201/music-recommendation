@@ -13,7 +13,7 @@ import { useRecoilValue } from 'recoil';
 
 function App() {
 
-  const loggedIn = useRecoilValue(user);
+  const loggedIn = useRecoilValue(user)?.user;
 
   return (
     <Routes>
