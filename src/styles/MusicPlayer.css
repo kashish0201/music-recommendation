@@ -33,12 +33,9 @@ body {
 
 .music-player {
     /* margin-top: 7rem; */
-    margin-right: auto;
-    margin-left: auto;
-    max-height: 500px;
-    max-width: 60rem;
+    height: 250px;
+    max-width: 100%;
     background: #525252;
-    border-radius: 1.25rem;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.19),
         0 6px 6px -10px rgba(0, 0, 0, 0.23);
 }
@@ -62,6 +59,7 @@ body {
     right: 0;
     left: 0;
     margin: auto;
+    margin-bottom: 3rem;
     background: rgba(173, 173, 173, 0.95);
     width: 60%;
     height: 0.25rem;
@@ -203,11 +201,16 @@ body {
 }
 
 .list__link {
+    background-color: transparent;
+    color: #fff;
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
-.list__link:focus,
-.list__link:hover {
+.more-btns {
+    margin-top: 3.2%;
+}
+
+.list__link:hover, #active {
     color: #d30320;
 }
 
@@ -227,7 +230,7 @@ body {
 }
 
 .list--footer {
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 /* Next songs */

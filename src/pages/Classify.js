@@ -1,5 +1,5 @@
 import "./auth/auth.css"
-import "./styles/classify.css"
+import "../styles/classify.css"
 
 
 const Classify = () => {

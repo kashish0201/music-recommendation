@@ -1,11 +1,8 @@
 .leftNav {
-    position: fixed;
     display: flex;
     flex-direction: column;
-    width: 8%;
+    width: 12%;
     height: 100vh;
-    left: 0px;
-    top: 0px;
     background: #1F1F1F;
     justify-content: space-between;
 }

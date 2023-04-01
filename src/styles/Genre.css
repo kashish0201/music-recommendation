@@ -1,9 +1,6 @@
 .genre {
-    position: absolute;
+    width: 100%;
     display: flex;
-    left: 11%;
-    top: 20%;
+    flex-wrap: wrap;
     justify-content: space-around;
-    width: 60%;
-
 }

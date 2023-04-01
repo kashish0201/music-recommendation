@@ -5,15 +5,20 @@
     flex-direction: column;
     text-align: center;
     color: #fff;
+    margin: 5%;
     
 }
 
-.genreCard>img {
-    height: 100px;
+.cardImage {
+    height: 125px;
     object-fit: contain;
     border-radius: 12% 12% 0 0;
 }
 
-.genreCard>span {
+.cardName {
     padding: 2%;
+}
+
+.genreCard:hover {
+    transform: scale(1.05);
 }

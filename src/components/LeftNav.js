@@ -1,13 +1,13 @@
-import './styles/LeftNav.css';
-import Logo from './images/musical-note.png'
-import HomeIcon from './images/home-icon.png'
-import SearchIcon from './images/search-icon.png'
-import HeartIcon from './images/heart-icon.png'
-import MicIcon from './images/mic-icon.png'
-import axiosInstance from "./axios";
+import '../styles/LeftNav.css';
+import Logo from '../images/musical-note.png'
+import HomeIcon from '../images/home-icon.png'
+import SearchIcon from '../images/search-icon.png'
+import HeartIcon from '../images/heart-icon.png'
+import MicIcon from '../images/mic-icon.png'
+import axiosInstance from "../axios";
 import { useSetRecoilState } from "recoil";
 import { Link, useNavigate } from "react-router-dom";
-import { user } from "./atoms";
+import { user } from "../atoms";
 import { useState } from 'react';
 
 
@@ -43,11 +43,10 @@ function LeftNav() {
                 
                 
                 <div className='nav'>
-                    <img src={Logo} alt="" className='logo' />
-                    <img src={HomeIcon} alt="" className='navIcon' />
+                    <Link to='/'><img src={HomeIcon} alt="" className='navIcon' /> </Link>
                     <img src={SearchIcon} alt="" className='navIcon' />
-                    <img src={HeartIcon} alt="" className='navIcon' />
-                    <img src={MicIcon} alt="" className='navIcon' />
+                    <Link to='/like'><img src={HeartIcon} alt="" className='navIcon' /></Link>
+                    <a href='https://ssoham10-music-classification-app-7worxz.streamlit.app/'><img src={MicIcon} alt="" className='navIcon' /></a>
                 </div>
                 <div>
                     <button onClick = { handleSubmit } className='logout' >Logout</button>

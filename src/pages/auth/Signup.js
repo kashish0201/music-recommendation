@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../auth/auth.css"
-import axiosInstance from "../axios";
+import axiosInstance from "../../axios";
 import { useSetRecoilState } from "recoil";
-import { user } from "../atoms";
+import { user } from "../../atoms";
 import { Link, useNavigate } from "react-router-dom";
 
 

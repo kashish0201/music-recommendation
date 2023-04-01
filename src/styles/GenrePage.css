@@ -1,13 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
+.genreHeading {
+    color: #fff;
+    text-transform: capitalize;
 }
 
-body {
-  background-color: #000;
+.songList {
+    color: #fff;
 }
 
-.App {
+.genreContainer {
   margin: 0;
   display: flex;
   justify-content: space-between;

@@ -1,10 +1,12 @@
 import './styles/App.css';
 // import { NavLink } from "react-router-dom";
 
-import Home from './Home';
-import Login from './auth/Login';
-import Signup from './auth/Signup';
-import Classify from './Classify';
+import Home from './pages/Home';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import Classify from './pages/Classify';
+import GenrePage from './pages/GenrePage';
+import LikedSongs from './pages/LikedSongs';
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import { user } from './atoms'
@@ -28,6 +30,8 @@ function App() {
           <>
             <Route path="/" element={<Home />}/>
             <Route path="/classify" element={<Classify/>} />
+            <Route path='/genrepage/:genre' element={<GenrePage/>} />
+            <Route path="/like" element={<LikedSongs/>} />
           </>
         )
       }

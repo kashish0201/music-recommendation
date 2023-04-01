@@ -1,0 +1,8 @@
+.main {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.main::-webkit-scrollbar {
+    width: 0;
+}
