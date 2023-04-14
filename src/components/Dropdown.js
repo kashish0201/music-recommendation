@@ -22,8 +22,7 @@ const Dropdown = ({ placeHolder }) => {
         <div className="dropdown-tools">
           <div className="dropdown-tool">
             <Icon />
-            
-          </div>
+                      </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import '../styles/LeftNav.css';
 import Logo from '../images/musical-note.png'
 import HomeIcon from '../images/home-icon.png'
 import SearchIcon from '../images/search-icon.png'
@@ -39,16 +38,24 @@ function LeftNav() {
     return (
         <>
             <div className="leftNav">
-                {/* <img src="https://www.transparentpng.com/thumb/musical-notes/music-note-red-images-clip-art--35.png" alt='' className='logo'></img> */}
-                
-                
-                <div className='nav'>
-                    <Link to='/'><img src={HomeIcon} alt="" className='navIcon' /> </Link>
-                    <img src={SearchIcon} alt="" className='navIcon' />
-                    <Link to='/like'><img src={HeartIcon} alt="" className='navIcon' /></Link>
-                    <a href='https://ssoham10-music-classification-app-7worxz.streamlit.app/'><img src={MicIcon} alt="" className='navIcon' /></a>
+                <div className="logoContainer">
+                    <img src={Logo} alt='Logo' className='logo'></img>
                 </div>
-                <div>
+                <div className='nav'>
+                    <Link to='/' className='navIcon'>
+                        <img src={HomeIcon} alt="" />
+                    </Link>
+                    <Link to='/search' className='navIcon'>
+                        <img src={SearchIcon} alt="" />
+                    </Link>
+                    <Link to='/like' className='navIcon'>
+                        <img src={HeartIcon} alt="" />
+                    </Link>
+                    <a href='https://ssoham10-music-classification-app-7worxz.streamlit.app/' className='navIcon'>
+                        <img src={MicIcon} alt="" />
+                    </a>
+                </div>
+                <div className='logoutContainer'>
                     <button onClick = { handleSubmit } className='logout' >Logout</button>
                 </div>
             </div>

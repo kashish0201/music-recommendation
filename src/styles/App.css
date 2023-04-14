@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -8,10 +9,103 @@ body {
 }
 
 .App {
-  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.leftNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 12%;
+  background: #1F1F1F;
+}
+
+.logoContainer {
+  padding: 20px;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navIcon {
+  width: 100%;
+  padding: 1rem;
+  display: block;
+}
+
+.navIcon img {
+  margin: 0 auto;
+  width: 2rem;
+  height: 2rem;
+}
+
+.logoutContainer {
+  padding: 20px;
+}
+
+.logout {
+  background-color: #d33333;
+  padding: 15px 20px;
+  border: 0;
+  font-size: larger;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.main {
+  width: 55%;
+  overflow-y: auto;
+}
+
+.main::-webkit-scrollbar {
+  width: 0;
+}
+
+.rightNav {
+  width: 33%;
+}
+
+.container {
+  padding: 15px;
+  color: white;
+}
+
+.genreHeading {
+  padding-bottom: 20px;
+}
+
+.song-container {
+  margin: 20px;
+  background-color: #1F1F1F;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.25), 0 2px 4px -2px rgb(255 255 255 / 0.25);
+}
+
+.song-container button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.song-container button svg, .song-container button.liked svg:hover {
+  fill: white;
+  cursor: pointer;
+}
+
+.song-container button svg:hover, .song-container button.liked svg {
+  fill: #d33333;
 }
