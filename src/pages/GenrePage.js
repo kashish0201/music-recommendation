@@ -1,10 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import withWrapper from '../Wrapper'
-import PlayerContainer from '../components/PlayerContainer'
 import { useState, useEffect } from 'react'
 import axiosInstance from '../axios'
 import SongCard from '../components/SongCard'
+import useAudioPlayer from '../hooks/useAudioPlayer'
+import { useSetRecoilState } from 'recoil';
+import { songQueue, nowPlaying } from '../atoms';
 
 
 function GenrePage() {
@@ -20,23 +22,25 @@ function GenrePage() {
         })
     }, [genre])
 
+    const { handleSongSelect } = useAudioPlayer();
+
+    const songSelect = (index) => {
+        handleSongSelect(index, songList);
+    }
+
     return (
         <div className='container'>
             <div className='genreContainer'>
-                <h1 className='genreHeading'>{genre}</h1>
+                <h3 className='genreHeading'>{genre}</h3>
 
                 <ul className='songList'>
                     {songList.map((song,index) => {
                         return (
-                            <SongCard key={index} id = {song.id} name = {song.name} isLiked = {song.isLiked} />
+                            <SongCard key={index} index={index} id = {song.id} name = {song.name} isLiked = {song.isLiked} songSelect={songSelect}  />
                         );
                     })}
                 </ul>
             </div>
-            {/* <PlayerContainer
-                likedSongs={likedSongs}
-                setLikedSongs={setLikedSongs}
-            /> */}
         </div>
     )
 }

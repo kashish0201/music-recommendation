@@ -18,3 +18,15 @@ export const user = atom({
     default: null,
     effects_UNSTABLE: [localStorageEffect("user")],
 });
+
+export const nowPlaying = atom({
+    key: "nowPlaying",
+    default: null,
+    effects_UNSTABLE: [localStorageEffect("nowPlaying")],
+});
+
+export const songQueue = atom({
+    key: "songQueue",
+    default: [],
+    effects_UNSTABLE: [localStorageEffect("songQueue")],
+});

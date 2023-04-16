@@ -1,6 +1,4 @@
-import '../styles/Card.css';
 import { Link } from 'react-router-dom';
-
 
 function Card(props) {
     return (

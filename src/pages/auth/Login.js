@@ -22,8 +22,6 @@ const Login = () => {
             password: password,
         };
 
-        console.log(formData);
-
         axiosInstance
             .post(`auth/login`, formData)
             .then((res) => {

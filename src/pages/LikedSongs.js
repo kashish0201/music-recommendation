@@ -3,6 +3,7 @@ import withWrapper from '../Wrapper'
 import { useState, useEffect } from 'react'
 import axiosInstance from '../axios'
 import SongCard from '../components/SongCard'
+import useAudioPlayer from '../hooks/useAudioPlayer'
 
 
 const LikedSongs = () => {
@@ -16,6 +17,12 @@ const LikedSongs = () => {
         })
     }, [])
 
+    const { handleSongSelect } = useAudioPlayer();
+
+    const songSelect = (index) => {
+        handleSongSelect(index, songList);
+    }
+
     return ( 
         <div className="container">
             <h1 className='genreHeading'>Liked Songs</h1>
@@ -23,7 +30,7 @@ const LikedSongs = () => {
             <ul className='songList'>
                 {songList.map((song,index) => {
                     return (
-                        <SongCard key={index} id = {song.id} name = {song.name} isLiked = {song.isLiked} />
+                        <SongCard key={index} index = {index} id = {song.id} name = {song.name} isLiked = {song.isLiked} songSelect = {songSelect} />
                     );
                 })}
             </ul>

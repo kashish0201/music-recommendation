@@ -11,6 +11,7 @@ import LikedSongs from './pages/LikedSongs';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { user } from './atoms'
 import { useRecoilValue } from 'recoil';
+import Search from './pages/Search';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/classify" element={<Classify/>} />
             <Route path='/genrepage/:genre' element={<GenrePage/>} />
             <Route path="/like" element={<LikedSongs/>} />
+            <Route path="/search" element={<Search />} />
           </>
         )
       }

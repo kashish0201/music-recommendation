@@ -1,5 +1,4 @@
 import Card from './Card';
-import '../styles/Genre.css';
 import axiosInstance from '../axios';
 import { useEffect, useState } from 'react';
 
@@ -22,12 +21,14 @@ function Genre() {
                 {
                     allGenres.map((genre, index) => {
                         return (
-                            <Card
-                                key={index}
-                                image='https://youthincmag.com/wp-content/uploads/2020/07/Pin-Img.jpg'
-                                genre={genre}
-                                Link={`/genrepage/${genre.toLowerCase()}`}
-                            />
+                            <div className="cardContainer">
+                                <Card
+                                    key={index}
+                                    image='https://youthincmag.com/wp-content/uploads/2020/07/Pin-Img.jpg'
+                                    genre={genre}
+                                    Link={`/genrepage/${genre.toLowerCase()}`}
+                                />
+                            </div>
                         )
                     })
                 }        
